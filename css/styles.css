@@ -131,6 +131,7 @@ nav h1 a {
     height: 50%;
     background-color: #3397db;
     align-items: center;
+    padding: 0.5rem;
 }
 .filter-options h2 {
     color: white;
@@ -167,11 +168,11 @@ nav h1 a {
     background-color: #fff;
     border: 2px solid #ccc;
     font-family: Arial, sans-serif;
-    margin: 15% 2%;
-    min-height: 380px;
+    margin: 1rem 2rem;
+    max-height: 100%;
     padding: 0 30px 25px;
     text-align: left;
-    width: 270px;
+    max-width: 100%;
 }
 #restaurants-list .restaurant-img {
     background-color: #ccc;
@@ -308,4 +309,83 @@ nav h1 a {
 }
 #restaurant-hours td {
     color: #666;
+}
+
+/* Media queries */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #restaurants-list li a {
+        background-color: yellow;
+    }
+    #restaurant-name {
+        visibility: hidden;
+    }
+    #restaurant-container,
+    #reviews-container {
+        padding: 5% 2%;
+    }
+
+    #reviews-container {
+        padding: 2%;
+    }
+
+    #reviews-list li {
+        width: 80%;
+    }
+
+    #reviews-container h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #restaurants-list li a {
+        background-color: darkorchid;
+    }
+
+    #reviews-list li {
+        width: 80%;
+    }
+    #reviews-container {
+        padding: 2% 2% 50%;
+    }
+    #restaurant-hours {
+        display: grid;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #restaurants-list li a {
+        background-color: green;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #restaurants-list li a {
+        background-color: blue;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #restaurants-list li a {
+        background-color: red;
+    }
+
+    #restaurant-hours {
+        display: block;
+    }
+
+    #restaurant-container,
+    #reviews-container {
+        padding: 8% 2%;
+    }
+
+    #reviews-container {
+        padding: 2% 2%;
+    }
 }
