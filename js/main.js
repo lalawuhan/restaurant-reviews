@@ -167,10 +167,13 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = restaurant => {
     const li = document.createElement("li");
+    li.setAttribute("role", "list item");
+    li.tabIndex = 0;
 
     const image = document.createElement("img");
     image.className = "restaurant-img";
     image.src = DBHelper.imageUrlForRestaurant(restaurant);
+    image.alt = `Photo of restaurant ${restaurant.name}`;
     li.append(image);
 
     const name = document.createElement("h1");
@@ -187,6 +190,7 @@ createRestaurantHTML = restaurant => {
 
     const more = document.createElement("a");
     more.innerHTML = "View Details";
+    more.setAttribute("aria-label", "View details of restaurant");
     more.href = DBHelper.urlForRestaurant(restaurant);
     li.append(more);
 
@@ -217,3 +221,13 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+        .register("./serviceworker.js")
+        .then(function() {
+            console.log("Registration successful ");
+        })
+        .catch(function() {
+            console.log("Registration failed ");
+        });
+}
