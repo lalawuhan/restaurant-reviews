@@ -168,12 +168,13 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 createRestaurantHTML = restaurant => {
     const li = document.createElement("li");
     li.setAttribute("role", "list item");
-    li.tabIndex = 0;
+    li.setAttribute("tabindex", "0");
 
     const image = document.createElement("img");
     image.className = "restaurant-img";
     image.src = DBHelper.imageUrlForRestaurant(restaurant);
     image.alt = `Photo of restaurant ${restaurant.name}`;
+    name.setAttribute("tabindex", "0");
     li.append(image);
 
     const name = document.createElement("h2");
