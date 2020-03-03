@@ -1,5 +1,5 @@
 // attribution to https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker
-let cacheName = "v1";
+const cacheName = "v1";
 let cacheFiles = [
     "/",
     "/css/styles.css",
